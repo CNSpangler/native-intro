@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
-  const [outputText, setOutputText] = useState('Learning how to build a React Native app!');
-
   return (
     <View style={styles.container}>
-      <Text>{outputText}</Text>
-      <Button title="Change Text" onPress={() => setOutputText('Ooooooohhhh look what it did!')} />
+      <View>
+        <TextInput />
+        <Button title="ADD" />
+      </View>
+      <View>
+
+      </View>
+      <Text>Words Go Now</Text>
     </View>
   );
 }
