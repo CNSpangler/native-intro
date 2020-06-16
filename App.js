@@ -3,36 +3,37 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
   return (
-    <View style={{
-      padding: 100
-    }}>
-      <View style={{ 
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
+    <View style={styles.container}>
+      <View style={styles.screen}>
         <TextInput 
           placeholder="Goals"
-          style={{
-            borderColor: 'black',
-            borderWidth: 1,
-            padding: 10,
-            width: 80%
-          }}
-        />
-        <Button 
-          title="ADD"
-        />
+          style={styles.input} />
+        <Button title="ADD" styles={styles.button} />
       </View>
       <View>
 
       </View>
-      <Text>Words Go Now</Text>
+      <Text>Testing</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  screen: {
+    padding: 50
+  },
+
+  input: {
+    width: '80%',
+    borderColor: 'black',
+    borderWidth: 1,
+    padding: 10
+  },
+  
+  button: {
+    backgroundColor: 'red'
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
