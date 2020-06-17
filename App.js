@@ -23,9 +23,9 @@ export default function App() {
         />
         <Button 
           title="ADD" 
-          styles={styles.butt}
           onPress={handleAddGoal}
         />
+
       </View>
       <ScrollView style={styles.goals}>
         {goals.map(goal => (<View key={goal} style={styles.goal}><Text>{goal}</Text></View>))}
@@ -42,17 +42,13 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    width: '80%',
+    width: 250,
     height: 40,
     borderColor: 'black',
     borderWidth: 1,
     padding: 10
   },
   
-  butt: {
-    width: 5
-  },
-
   container: {
     flex: 1,
     flexDirection: 'row',
