@@ -7,7 +7,7 @@ export default function App() {
 
   const handleInputChange = (enteredText) => setInput(enteredText);
   const handlePress = () => console.log(input);
-  const handleAddGoal = () => setGoals([...goals]);
+  const handleAddGoal = () => setGoals(currentGoals => [...currentGoals, input]);
 
   return (
     <View style={styles.screen}>
@@ -21,11 +21,11 @@ export default function App() {
         <Button 
           title="ADD" 
           styles={styles.button}
-          onPress={handlePress}
+          onPress={handleAddGoal}
         />
       </View>
-      <View>
-
+      <View style={styles.goals}>
+        {goals.map(goal => (<Text>{goal}</Text>))}
       </View>
     </View>
   );
@@ -33,18 +33,21 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 50
+    paddingTop: 70,
+    paddingRight: 50,
+    paddingLeft: 10
   },
 
   input: {
     width: '80%',
+    height: 40,
     borderColor: 'black',
     borderWidth: 1,
     padding: 10
   },
   
   button: {
-    color: 'red'
+    width: 5
   },
 
   container: {
@@ -53,4 +56,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+
+  goals: {
+    marginTop: 25
+  }
 });
