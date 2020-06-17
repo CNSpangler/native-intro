@@ -7,7 +7,10 @@ export default function App() {
 
   const handleInputChange = (enteredText) => setInput(enteredText);
   const handlePress = () => console.log(input);
-  const handleAddGoal = () => setGoals(currentGoals => [...currentGoals, input]);
+  const handleAddGoal = () => {
+    setGoals(currentGoals => [...currentGoals, input]);
+    setInput('');
+  };
 
   return (
     <View style={styles.screen}>
